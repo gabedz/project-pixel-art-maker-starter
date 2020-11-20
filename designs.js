@@ -1,6 +1,6 @@
 // Select color input
 let color = document.getElementById('colorPicker');
-let paintColor = color.value;
+let paint = color.value;
 
 // Select size input
 
@@ -22,18 +22,15 @@ function makeGrid() {
     }
 };
 
-function paint() {
-    cell.setAttribute(background-color: paintColor);
-};
-
 let gridMaker = document.getElementById('sizePicker');
-let gridCell = document.querySelectorAll('td');
+let gridCell = document.getElementsByTagName('td');
 
 gridMaker.addEventListener('submit', function(event){
     event.preventDefault()
     makeGrid()
 });
 
-gridCell.addEventListener('click', function(){
-    paint()
+gridCell.addEventListener('click', function(paintColor){
+    paintColor = paint;
+    gridCell.setAttribute(background-color: paintColor)
 });
